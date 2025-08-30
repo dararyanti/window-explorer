@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "prisma": {
+    "seed": "bun run prisma/seed.ts",
+    "migrate": "bun prisma migrate dev"
+  },
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts",
+    "seed": "bun prisma db push && bun prisma db seed",
+    "migrate": "bun prisma migrate dev",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/swagger-ui-dist": "^3.30.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.3.3",
+    "@elysiajs/swagger": "^1.3.1",
+    "@prisma/client": "5.13.0",
+    "elysia": "^1.3.20",
+    "prisma": "5.13.0",
+    "swagger-ui-dist": "^5.28.0"
+  }
+}
